@@ -1,0 +1,1169 @@
+@import "./variables.scss";
+
+/* header */
+
+.header
+{
+   position: fixed;
+   width: 100%;
+   top: 30px;
+   left: 0;
+   z-index: 999;
+
+   &__wrap
+   {
+      background: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+   
+      padding: 20px 35px;
+      border-radius: 45px;
+   
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+   }
+
+   &__logo
+   {
+      img
+      {
+         width: auto;
+         height: 30px;
+      }
+   }
+
+   &__menu
+   {
+      .header__collapse
+      {
+         display: block;
+      }
+
+      ul
+      {
+         list-style-type: none;
+         padding: 0;
+         margin: 0;
+      
+         display: flex;
+         align-items: center;
+
+         li
+         {
+            margin-left: 30px;
+
+            a
+            {
+               font-size: 14px;
+               font-weight: 500;
+               color: $color-text-black;
+               transition: all 0.3s;
+
+               &:hover
+               {
+                  color: $color-highlight;
+               }
+            }
+         }
+      }
+   }
+
+   &__menu-mobi
+   {
+      display: none;
+
+      &--button
+      {
+         color: var(--color-main);
+         
+         display: flex;
+         flex-direction: column;
+         background: transparent;
+         width: 50px;
+         height: 50px;
+         justify-content: center;
+         align-items: center;
+         border-radius: 10px;
+
+         &.open i 
+         {
+            &:first-child {
+               transform: rotate(-45deg) translate(-5px, 5px);
+            }
+
+            &:nth-child(2) {
+               opacity: 0;
+            }
+
+            &:last-child {
+               transform: rotate(45deg) translate(-6px, -6px);
+            }
+         }
+      }
+
+      &--button > i
+      {
+         width: 30px;
+         height: 2px;
+         background-color: #000;
+         transition: .4s;
+         display: block;
+         margin: 3px auto;
+
+         transition: all 0.25s ease-in-out;
+      }
+   }
+
+   /* nho hon 1200 */
+   @media (max-width: 1199.98px)
+   {
+      &__menu {
+         ul {
+            li {
+               margin-left: 25px;
+            }
+         }
+      }
+   }
+
+   /* nho hon 992 */
+   @media (max-width: 991.98px)
+   {
+      &__wrap
+      {
+         flex-wrap: wrap;
+      }
+
+      &__collapse
+      {
+         &.collapse:not(.show) 
+         {
+            display: none;
+         }
+      }
+
+      &__menu
+      {
+         width: 100%;
+         background-color: #fff;
+   
+         ul 
+         {
+            flex-wrap: wrap;
+            margin-top: 20px;
+
+            li 
+            {
+               margin-left: 0;
+               width: 100%;
+
+               padding: 10px 0;
+               border-top: 1px solid #eee;
+
+               text-align: center;
+               transition: all 0.3s;
+
+               &:hover 
+               {
+                  background-color: #eee;
+                  cursor: pointer;
+
+                  a {
+                     color: $color-highlight;
+                  }
+               }
+            }
+         }
+      }
+
+      &__menu-mobi
+      {
+         display: inline-block;
+         font-size: 25px;
+         cursor: pointer;
+      }
+   }
+
+   /* nho hon 576 */
+   @media (max-width: 575.98px)
+   {
+      &__wrap
+      {
+         padding: 10px 30px;
+      }
+
+      &__logo
+      {
+         img {
+            height: 25px;
+         }
+      }
+   }
+}
+
+/* End header */
+
+
+/* section-one, banner-hero */
+
+/* .section-one
+{
+   background-image: url(../images//banner-bg.png);
+   height: 100vh;
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center bottom;
+} */
+
+.banner-hero
+{
+   position: relative;
+   width: 100%;
+   height: 100vh;
+
+   &__background
+   {
+      position: absolute;
+      top: -10%;
+      left: 0;
+   
+      width: 100%;
+      height: 110%;
+
+      img
+      {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+      }
+   }
+
+   &__area
+   {
+      height: 100%;
+
+      display: flex;
+      align-items: center;
+      text-align: center;
+
+      .row
+      {
+         justify-content: center;
+      }
+   }
+
+   &__title
+   {
+      font-size: 38px;
+      color: #fff;
+   }
+
+   &__description
+   {
+      font-size: 16px;
+      color: #fff;
+      margin-top: 30px;
+   }
+
+   .button--highlight
+   {
+      margin-top: 30px;
+   }
+
+   /* nho hon 768 */
+   @media (max-width: 767.98px)
+   {
+      &__title 
+      {
+         font-size: 24px;
+      }
+
+      &__description 
+      {
+         font-size: 14px;
+         margin-top: 25px;
+      }
+
+      &__content
+      {
+         .button--highlight
+         {
+            font-size: 14px;
+            padding: 6px 25px;
+            margin-top: 25px;
+         }
+      }
+   }
+}
+
+/* End section-one, banner-hero */
+
+
+/* section-two, box-highlight */
+
+.box-highlight
+{
+   margin-top: -190px;
+
+   &__item
+   {
+      background: #fff;
+      padding: 30px 30px;
+      border-radius: 20px;
+      box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.10);
+      cursor: pointer;
+   
+      text-align: center;
+   }
+
+   &__icon
+   {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: $color-main;
+      padding: 20px 20px;
+   
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   
+      margin-left: auto;
+      margin-right: auto;
+   
+      transition: all 0.3s;
+
+      img
+      {
+         width: 100%;
+         height: 100%;
+         object-fit: contain;
+      }
+   }
+
+   &__item:hover &__icon
+   {
+      background: $color-highlight;
+   }
+
+   &__title
+   {
+      font-size: 18px;
+      font-weight: 500;
+      color: $color-text-black;
+      margin-top: 20px;
+   }
+
+   &__description
+   {
+      font-size: 14px;
+      color: $color-text-gray;
+      margin-top: 20px;
+   }
+
+   /* nho hon 992 */
+   @media (max-width: 991.98px)
+   {
+      & {
+         margin-top: 0;
+      }
+
+      &__item
+      {
+         margin-bottom: 30px;
+      }
+
+      &__icon
+      {
+         width: 90px;
+         height: 90px;
+      }
+   }
+
+   /* nho hon 768 */
+   @media (max-width: 767.98px)
+   {
+      &__icon 
+      {
+         width: 80px;
+         height: 80px;
+      }
+   }
+}
+
+/* End section-two , box-highlight */
+
+
+/* section-three, box-info */
+
+.box-info
+{
+   margin-top: 80px;
+
+   .row
+   {
+      align-items: center;
+
+      justify-content: space-between;
+   }
+
+   &__image
+   {
+      text-align: center;
+
+      img
+      {
+         width: auto;
+         height: 100%;
+      }
+   }
+
+   &__title
+   {
+      font-size: 24px;
+      font-weight: 500;
+      color: $color-text-black;
+   }
+
+   &__description
+   {
+      font-size: 16px;
+      color: $color-text-gray;
+      margin-top: 30px;
+   }
+
+   /* nho hon 992 */
+   @media (max-width: 991.98px)
+   {
+      &__image
+      {
+         img 
+         {
+            width: 32%;
+            height: 100%;
+         }
+      }
+
+      &__title
+      {
+         margin-top: 30px;
+      }
+   }
+
+   /* nho hon 768 */
+   @media (max-width: 767.98px)
+   {
+      &__image
+      {
+         img
+         {
+            width: 25%;
+         }
+      }
+   }
+
+   /* nho hon 576 */
+   @media (max-width: 575.98px)
+   {
+      &__title 
+      {
+         font-size: 20px;
+         margin-top: 22px;
+      }
+
+      &__description
+      {
+         font-size: 14px;
+         margin-top: 22px;
+      }
+   }
+}
+
+/* End section-three, box-info */
+
+
+/* section-four, box-info-two */
+
+.box-info-two
+{
+   margin-top: 80px;
+
+   .container::before
+   {
+      content: "";
+      display: block;
+      width: 100%;
+      border: 1px solid #eee;
+      margin-bottom: 70px;
+   }
+
+   .row
+   {
+      align-items: center;
+
+      justify-content: space-between;
+   }
+
+   &__title
+   {
+      font-size: 24px;
+      font-weight: 500;
+      color: $color-text-black;
+   }
+
+   &__description
+   {
+      font-size: 16px;
+      color: $color-text-gray;
+      margin-top: 30px;
+   }
+
+   &__image
+   {
+      text-align: center;
+
+      img
+      {
+         width: auto;
+         height: 100%;
+      }
+   }
+
+   /* nho hon 992 */
+   @media (max-width: 991.98px)
+   {
+      &__image
+      {
+         margin-top: 30px;
+
+         img
+         {
+            width: 32%;
+            height: 100%;
+         }
+      }
+   }
+
+   /* nho hon 768 */
+   @media (max-width: 767.98px)
+   {
+      &__image
+      {
+         img
+         {
+            width: 25%;
+         }  
+      }
+   }
+
+   /* nho hon 576 */
+   @media (max-width: 575.98px)
+   {
+      &__title 
+      {
+         font-size: 20px;
+      }
+
+      &__description
+      {
+         font-size: 14px;
+         margin-top: 22px;
+      }
+
+      &__image
+      {
+         margin-top: 22px;
+      }
+   }
+}
+
+/* End section-four, box-info-two */
+
+
+/* section-five, work-process */
+
+.work-process
+{
+   margin-top: 80px;
+
+   position: relative;
+
+   padding: 120px 0;
+
+   &__background
+   {
+      position: absolute;
+      top: 0;
+      left: 0;
+   
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+
+      img
+      {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+      }
+   }
+
+   & .box-head
+   {
+      margin-bottom: 60px;
+   }
+
+   &__item
+   {
+      background: #fff;
+      padding: 20px 20px;
+      border-radius: 20px;
+   
+      text-align: center;
+   
+      position: relative;
+   
+      transition: all 0.3s;
+      cursor: pointer;
+      
+      &:hover
+      {
+         // margin-top: -10px;
+         transform: translateY(-10px);
+      }
+
+      &::before
+      {
+         content: "";
+         width: 100%;
+         height: 100%;
+         border-radius: 20px;
+         background: #ffffff26;
+      
+         position: absolute;
+         right: -10px;
+         bottom: -10px;
+      }
+   }
+
+   &__content
+   {
+      position: relative;
+   }
+
+   &__icon
+   {
+      img
+      {
+         width: auto;
+         height: 100%;
+      }
+   }
+
+   &__title
+   {
+      font-size: 18px;
+      font-weight: 400;
+      color: $color-text-black;
+      margin-top: 20px;
+   }
+
+   &__description
+   {
+      font-size: 16px;
+      font-weight: 400;
+      color: $color-text-gray;
+      margin-top: 10px;
+   }
+
+   /* nho hon 992 */
+   @media (max-width: 991.98px)
+   {
+      &__item 
+      {
+         margin-bottom: 30px;
+      }
+   }
+}
+
+/* End section-five, work-process */
+
+
+/* section-six, they-say */
+
+.they-say
+{
+   padding: 60px 0;
+
+   .box-head
+   {
+      margin-bottom: 35px;
+   }
+
+   &__item
+   {
+      background: #fff;
+      padding: 25px 25px;
+      border-radius: 20px;
+      box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.10);
+   
+      height: 100%;
+   
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+   }
+
+   &__icon
+   {
+      text-align: center;
+
+      img
+      {
+         height: 100%;
+      }
+   }
+
+   &__description
+   {
+      font-size: 16px;
+      color: $color-text-gray;
+      margin-top: 20px;
+   }
+
+   &__info
+   {
+      display: flex;
+      align-items: center;
+   
+      margin-top: 20px;
+   }
+
+   &__image
+   {
+      margin-right: 20px;
+
+      img
+      {
+         width: 60px;
+         height: 60px;
+         border-radius: 50%;
+         object-fit: cover;
+      }
+   }
+
+   &__detail
+   {
+      flex: 1;
+
+      transition: all 0.3s;
+   }
+
+   &__item:hover &__info &__detail
+   {
+      margin-left: 10px;
+   }
+
+   &__name
+   {
+      font-size: 17px;
+      color: $color-text-black;
+   }
+
+   &__position
+   {
+      font-size: 15px;
+      color: $color-highlight;
+      margin-top: 5px;
+   }
+
+   /* nho hon 992 */
+   @media (max-width: 991.98px)
+   {
+      .md-6-margin
+      {
+         margin-bottom: 30px;
+      }
+   }
+
+   /* nho hon 576 */
+   @media (max-width: 575.98px)
+   {
+      &__icon
+      {
+         img 
+         {
+            height: 90%;
+         }
+      }
+
+      &__description
+      {
+         font-size: 14px;
+      }
+
+      &__image
+      {
+         img
+         {
+            width: 55px;
+            height: 55px;
+         }
+      }
+
+      &__name 
+      {
+         font-size: 16px;
+      }
+
+      &__position 
+      {
+         font-size: 14px;
+      }
+   }
+}
+
+/* End section-six, they-say */
+
+
+/* section-seven, pricing-plans */
+
+.pricing-plans
+{
+   background: $color-background-violet;
+   padding: 60px 0;
+
+   .box-head
+   {
+      margin-bottom: 60px;
+   }
+
+   &__item
+   {
+      background: #fff;
+      border-radius: 20px;
+      padding: 30px 30px;
+      box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.1);
+   
+      text-align: center;
+   }
+
+   &__title
+   {
+      font-size: 16px;
+      font-weight: 500;
+      color: $color-text-black;
+   }
+
+   &__price
+   {
+      background-color: $color-main;
+      color: #fff;
+      border-radius: 20px;
+      padding: 20px 0;
+      margin-top: 30px;
+
+      span
+      {
+         &:first-child
+         {
+            font-size: 24px;
+            font-weight: 500;
+         }
+
+         &:last-child
+         {
+            font-size: 14px;
+         }
+      }
+   }
+
+   // .pricing-plans__item--highlight .pricing-plans__price
+   &__item--highlight &
+   {
+      &__price
+      {
+         background-color: $color-highlight;
+      }
+   }
+
+   &__list
+   {
+      margin-top: 30px;
+
+      ul
+      {
+         list-style-type: none;
+         padding: 0;
+         margin: 0;
+
+         li
+         {
+            font-size: 14px;
+            color: $color-text-light-gray;
+            margin-bottom: 12px;
+         }
+      }
+
+      &--inactive
+      {
+         text-decoration: line-through;
+      }
+   }
+
+   .button--main
+   {
+      margin-top: 18px;
+   }
+
+   /* nho hon 992 */
+   @media (max-width: 991.98px)
+   {
+      &__item 
+      {
+         margin-bottom: 30px;
+      }
+   }
+}
+
+/* End section-seven, pricing-plans */
+
+
+/* section-eight */
+/* End section-eight */
+
+
+/* section-nine, blog-entries */
+
+.blog-entries
+{
+   background: #fff;
+   padding: 60px 0;
+
+   .box-head
+   {
+      margin-bottom: 45px;
+   }
+
+   &__item
+   {
+      /* background: red; */
+      padding: 15px 5px;
+
+      text-align: center;
+
+      height: 100%;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+   }
+
+   &__image
+   {
+      width: 100%;
+      aspect-ratio: 16/9;
+      overflow: hidden;
+
+      img
+      {
+         width: 100%;
+         height: 100%;
+         border-radius: 20px;
+         object-fit: cover;
+      }
+   }
+
+   &__content
+   {
+      margin-top: 20px;
+   }
+
+   &__title
+   {
+      font-size: 18px;
+      font-weight: 500;
+      color: $color-text-black;
+   
+      display: inline-block;
+      cursor: pointer;
+      transition: all 0.3s;
+
+      &:hover
+      {
+         color: $color-highlight;
+      }
+   }
+
+   &__description
+   {
+      font-size: 14px;
+      color: $color-text-gray;
+      margin-top: 15px;
+   }
+
+   .button--main
+   {
+      margin-top: 20px;
+   }
+
+   /* nho hon 992 */
+   @media (max-width: 991.98px)
+   {
+      & .md-6-margin
+      {
+         /* margin-bottom: 30px; */
+         margin-bottom: 10px;
+      }
+   }
+}
+
+/* End section-nine, blog-entries */
+
+
+/* section-ten, talk-to-us */
+
+.talk-to-us
+{
+   background: $color-background-violet;
+   padding: 60px 0;
+
+   .box-head
+   {
+      margin-bottom: 55px;
+   }
+
+   &__title
+   {
+      font-size: 18px;
+      font-weight: 500;
+      color: $color-text-black;
+      margin-bottom: 25px;
+   }
+
+   &__description
+   {
+      p
+      {
+         font-size: 15px;
+         color: $color-text-gray;
+         margin-bottom: 25px;
+      }
+   }
+
+   &__input
+   {
+      padding: 12px 20px;
+      outline: none;
+      font-size: 14px;
+      border-radius: 20px;
+   
+      width: 100%;
+      margin-bottom: 30px;
+   
+      border: 1px solid #ededed;
+      transition: all 0.3s;
+
+      &:focus
+      {
+         border: 1px solid #80bdff;
+         box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .25);
+      }
+   }
+
+   textarea
+   {
+      width: 100%;
+      min-height: 150px;
+      padding: 12px 20px;
+      border: 0;
+      outline: none;
+      resize: none;
+      font-size: 14px;
+      border-radius: 20px;
+   
+      margin-bottom: 30px;
+   
+      border: 1px solid #ededed;
+      transition: all 0.3s;
+
+      &:focus
+      {
+         border: 1px solid #80bdff;
+         box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .25);
+      }
+   }
+}
+
+/* End section-ten, talk-to-us */
+
+
+/* footer */
+
+.footer
+{
+   background-image: linear-gradient(127deg, #a759d1 0%, #8261ee 91%);
+   padding: 30px 0;
+
+   &__social
+   {
+      border-bottom: 1px solid #ffffff52;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+
+      ul
+      {
+         list-style-type: none;
+         padding: 0;
+         margin: 0;
+      
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         flex-wrap: wrap;
+
+         li
+         {
+            margin: 10px 10px;
+
+            a
+            {
+               width: 32px;
+               height: 32px;
+               background: #fff;
+               border-radius: 50%;
+            
+               display: flex;
+               justify-content: center;
+               align-items: center;
+            
+               font-size: 14px;
+               color: #9d5bd9;
+            
+               transition: all 0.3s;
+            }
+         }
+
+         li:hover
+         {
+            a
+            {
+               background: $color-highlight;
+               color: #fff;
+            }
+         }
+      }
+   }
+
+   &__copyright
+   {
+      font-size: 13px;
+      font-weight: 500;
+      color: #fff;
+   
+      text-align: center;
+   }
+}
+
+/* End footer */

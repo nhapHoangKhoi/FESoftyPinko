@@ -1,0 +1,107 @@
+@import "./variables.scss";
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+body
+{
+    font-family: $font-text;
+    line-height: 1.5;
+}
+
+a:hover
+{
+    text-decoration: none;
+}
+
+
+/* button */
+
+.button
+{
+    display: inline-block;
+    background: gray;
+    color: #fff;
+    padding: 10px 30px;
+    border-radius: 45px;
+    font-size: 14px;
+    border: 1px solid gray;
+    text-transform: uppercase;
+
+    &--main
+    {
+        background: $color-main;
+        border-color: $color-main;
+        color: #fff;
+        transition: all 0.3s;
+
+        &:hover
+        {
+            background: $color-highlight;
+            border-color: $color-highlight;
+            color: #fff;
+        }
+    }
+
+    &--highlight
+    {
+        background: $color-highlight;
+        border-color: $color-highlight;
+        color: #fff;
+        transition: all 0.3s;
+
+        &:hover
+        {
+            background: $color-main;
+            border-color: $color-main;
+            color: #fff;
+        }
+    }
+}
+
+/* End button */
+
+
+/* box-head */
+
+.box-head
+{
+    max-width: 600px;
+
+    &.box-center
+    {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    &__title
+    {
+        font-weight: 500;
+        color: $color-text-black;
+
+        &--text-white
+        {
+            color: #fff;
+        }
+
+        &--text-large
+        {
+            font-size: 28px;
+        }
+    }
+
+    &__description
+    {
+        font-size: 16px;
+        color: $color-text-gray;
+        margin-top: 20px;
+
+        &--text-white
+        {
+            color: #fff;
+        }
+    }
+}
+
+/* End box-head */
