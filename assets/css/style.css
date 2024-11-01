@@ -71,7 +71,6 @@
   width: 30px;
   height: 2px;
   background-color: #000;
-  transition: 0.4s;
   display: block;
   margin: 3px auto;
   transition: all 0.25s ease-in-out;
